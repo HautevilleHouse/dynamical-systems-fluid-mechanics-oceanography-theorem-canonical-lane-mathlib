@@ -1,0 +1,14 @@
+import HautevilleHouse.DynamicalSystemsFluidMechanicsOceanographyTheoremCanonicalLaneLean.BridgeLemmas
+import HautevilleHouse.DynamicalSystemsFluidMechanicsOceanographyTheoremCanonicalLaneLean.OceanClosureCertificate
+
+namespace HautevilleHouse
+namespace DynamicalSystemsFluidMechanicsOceanographyTheoremCanonicalLaneLean
+
+def ConstrainedTheoremClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ OceanClosureCertificateClosed sourceOceanClosureCertificate
+
+theorem constrained_theorem_closure (A : AdmissibleClass) : ConstrainedTheoremClosure A := by
+  refine And.intro (bridge_from_admissible_class A) source_ocean_closure_certificate_closed
+
+end HautevilleHouse.DynamicalSystemsFluidMechanicsOceanographyTheoremCanonicalLaneLean
+end HautevilleHouse
